@@ -1,0 +1,48 @@
+.profile-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-svg > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.profile-pic {
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-secundario);
+}
+
+.profile-pic > img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.profile-pic > svg {
+  position: relative;
+  bottom: 0.1rem;
+}
+
+.profile-pic > svg > path {
+  fill: var(--color-white);
+}
+
+.profile-pic.small {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-pic.medium {
+  width: 50px;
+  height: 50px;
+}
+
+.profile-pic.large {
+  width: 64px;
+  height: 64px;
+}

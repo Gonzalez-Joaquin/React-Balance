@@ -1,0 +1,128 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.small .input {
+  padding: 12px 8px;
+}
+
+.label {
+  font: normal 400 16px/148% 'Lato';
+  color: var(--color-fuente-principal);
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  outline: 0;
+  padding: 12px 8px;
+  border-radius: 6px;
+  background: var(--color-fondo-95);
+  color: var(--color-font-active);
+  caret-color: var(--color-principal);
+  font: normal 500 14px/16px 'Lato';
+  border: 1px solid var(--color-fondo-contenedores);
+  transition: ease-out 0.2s;
+}
+
+.textarea {
+  outline: 0;
+  padding: 12px 8px;
+  border-radius: 2px;
+  background: var(--color-fondo-95);
+  color: var(--color-font-active);
+  caret-color: var(--color-principal);
+  font: normal 500 14px/16px 'Lato';
+  border: 1px solid var(--color-fondo-contenedores);
+  resize: none;
+  transition: ease-out 0.2s;
+}
+
+.input:is(:active, :focus, :hover),
+.textarea:is(:active, :focus, :hover) {
+  border-color: var(--color-principal);
+}
+
+.input-error,
+.input-error:is(:active, :focus, :hover) {
+  border-color: var(--color-error);
+}
+
+.errors-container {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.have-limit {
+  min-height: 15px;
+}
+
+.error {
+  font: normal 400 12px/15px 'Lato';
+  color: var(--color-error);
+}
+
+.counter {
+  margin-left: auto;
+  font: normal 400 12px/15px 'Lato';
+}
+
+.counter > span {
+  font: normal 400 12px/15px 'Lato';
+}
+
+.input::placeholder {
+  font: normal 500 14px/1.4 'Lato';
+  color: var(--color-gray-light);
+}
+
+.input-icon {
+  padding-right: 32px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--color-gray-light);
+}
+
+.input:disabled,
+.textarea:disabled {
+  background: var(--color-secundario);
+  border: var(--color-gray-light);
+  color: var(--color-gris-claro);
+}
+
+@media (min-width: 925px) {
+  .input {
+    padding: 12px;
+  }
+
+  .textarea {
+    padding: 12px;
+  }
+
+  .icon {
+    width: 40px;
+  }
+
+  .input-icon {
+    padding-right: 40px;
+  }
+}

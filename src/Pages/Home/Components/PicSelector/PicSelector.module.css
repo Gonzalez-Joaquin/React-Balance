@@ -1,0 +1,143 @@
+.card-container {
+  padding-inline: 12px;
+  padding-block: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.container {
+  flex: none;
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-content: center;
+}
+
+.container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  margin-left: auto;
+  height: fit-content;
+  font: normal 600 16px/135% 'Lato' !important;
+}
+
+.shape {
+  width: 120px;
+  height: 4px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  background: var(--color-fondo-contenedores);
+}
+
+.shape:last-child {
+  width: 75px;
+  margin-bottom: unset;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(26, 53, 94, 0.3);
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  transition: ease-out 0.3s;
+  z-index: -1;
+}
+
+.overlay.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.popUp {
+  transform: translateY(10%);
+  scale: 0.9;
+  width: 480px;
+  height: 550px;
+  background: var(--color-fondo-95);
+  border-radius: 8px;
+  opacity: 0;
+  transition: ease-out 0.3s;
+  box-shadow: 0px 10px 30px rgba(62, 19, 77, 0.47);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.overlay.active > .popUp {
+  transform: translateY(0);
+  scale: 1;
+  opacity: 1;
+}
+
+.header {
+  width: 100%;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 2rem;
+}
+
+.header-button {
+  padding: unset;
+  display: grid;
+  place-content: center;
+}
+
+.header-button > i {
+  line-height: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.popUp-body {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.avatar {
+  border: 2px solid var(--color-fondo-95);
+  transition: ease-out 0.3s;
+}
+
+.avatar:hover {
+  cursor: pointer;
+  border: 2px solid var(--color-principal);
+}
+
+.paginator {
+  width: 100%;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.error {
+  background-color: var(--color-error);
+}
+
+.warning {
+  background-color: var(--color-attention);
+}
+
+.success {
+  background-color: var(--color-approval);
+}
+
+.processing {
+  background-color: var(--color-secundario);
+}
+
+.text {
+  font: normal 300 16px/148% 'Poppins';
+  color: var(--color-black);
+}

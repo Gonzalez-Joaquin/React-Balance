@@ -1,0 +1,68 @@
+.button {
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--color-white);
+  background: var(--color-principal);
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.2s;
+}
+
+.button:hover {
+  background: var(--color-principal);
+}
+
+.button:active {
+  background: var(--color-fuente-principal);
+}
+
+.unfilled {
+  color: var(--color-primario);
+  background: 0;
+}
+
+.unfilled:hover {
+  background: 0;
+  color: var(--color-principal);
+}
+
+.unfilled:active {
+  color: var(--color-principal);
+}
+
+.large {
+  font: normal 500 18px/132% 'Lato';
+  padding: 12px 22px;
+}
+
+.medium {
+  font: normal 500 16px/148% 'Lato';
+  padding: 8px 14px;
+}
+
+.small {
+  font: normal 500 14px/140% 'Lato';
+  padding: 4px 12px;
+}
+
+.button:disabled {
+  color: white;
+  background: var(--color-gray-light);
+}
+
+.unfilled:disabled {
+  color: var(--color-gray-light);
+  background: 0;
+}
+
+.svg-icon-div {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}

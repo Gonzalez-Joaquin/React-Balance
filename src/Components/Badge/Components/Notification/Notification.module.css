@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.container.extra {
+  padding-top: 6px;
+  padding-right: 12px;
+  width: fit-content;
+  height: unset;
+}
+
+.notification {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 0px;
+  top: 0px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+.notification.extra {
+  border-color: transparent;
+}
+
+.notification.error {
+  background-color: var(--color-error);
+}
+
+.notification.warning {
+  background-color: var(--color-attention);
+}
+
+.notification.success {
+  background-color: var(--color-approval);
+}
+
+.notification.processing {
+  background-color: var(--color-secundario);
+}
+
+.container-svg {
+  display: grid;
+  place-items: center;
+}
+
+.container-svg > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.container-svg > svg > path {
+  fill: var(--color-hint-text);
+}
+
+.profile-pic {
+  width: 27px;
+  height: 27px;
+}
+
+.profile-pic > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
