@@ -34,10 +34,4 @@ export const routes: Array<Route> = [
       },
     ],
   },
-  {
-    icon: 'comment-quote',
-    name: 'Mensajes',
-    path: '/Chats',
-    Component: lazy(() => import('../Pages/Chats/Chats')),
-  },
 ]

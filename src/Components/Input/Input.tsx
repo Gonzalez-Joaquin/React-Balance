@@ -55,6 +55,7 @@ const Input = ({
             style={{ ...style }}
             onChange={onChange}
             disabled={disabled}
+            value={value}
             placeholder={placeholder}
             className={`${styles.input} ${className} ${
               error ? styles['input-error'] : ''
@@ -65,6 +66,7 @@ const Input = ({
           <textarea
             id={id}
             name={name}
+            value={value}
             onChange={onChange}
             disabled={disabled}
             style={{ ...style }}

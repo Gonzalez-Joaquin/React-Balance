@@ -36,4 +36,25 @@ interface MessageDTO {
   chatId: string
 }
 
-export type { UserDTO, CharacterDTO, UserWithCharacter, ChatDTO, MessageDTO }
+interface CallDTO {
+  idCall: string
+  user: {
+    id: string
+    ready: boolean
+  }
+  asesor: {
+    id: string
+    ready: boolean
+  }
+  status: 'pending' | 'ongoing' | 'completed'
+  timestamp: string
+}
+
+export type {
+  UserDTO,
+  CharacterDTO,
+  UserWithCharacter,
+  ChatDTO,
+  MessageDTO,
+  CallDTO,
+}

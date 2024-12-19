@@ -1,5 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import { UserWithCharacter } from '../../../../../../@types'
-import { Badge, Button, Card, Tag } from '../../../../../../Components'
+import { Button, Card, Tag } from '../../../../../../Components'
 import style from './UserCard.module.css'
 
 interface Props {
@@ -7,11 +8,26 @@ interface Props {
 }
 
 const UserCard = ({ user }: Props) => {
+  const navigate = useNavigate()
+
   return (
     <Card className={style.card}>
       <div className={style.header}>
         <Tag label={user.character.species} />
-        <Badge status={user.active ? 'success' : 'error'} />
+        <div style={{ display: 'flex' }}>
+          <Button
+            className={style.button}
+            icon={'call-outgoing'}
+            unfilled
+            onClick={() => navigate(`/Calls/Client/${user.id}`)}
+          />
+          <Button
+            className={style.button}
+            icon={'call-outgoing'}
+            unfilled
+            onClick={() => navigate(`/Calls/Assesor/${user.id}`)}
+          />
+        </div>
       </div>
       <div className={style.body}>
         <div className={style.image}>
@@ -22,7 +38,12 @@ const UserCard = ({ user }: Props) => {
         <h4 className={style['footer-name-surname']}>
           {user.name} {user.surname}
         </h4>
-        <Button className={style.button} icon={'comment'} unfilled />
+        <Button
+          className={style.button}
+          icon={'comment'}
+          unfilled
+          onClick={() => navigate(`/Chats/${user.id}`)}
+        />
       </div>
     </Card>
   )

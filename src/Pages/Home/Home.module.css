@@ -13,8 +13,6 @@
   height: 100%;
 }
 
-
-
 .article-form {
   width: 600px;
   display: grid;
@@ -56,7 +54,21 @@
   color: var(--fuente-principal);
 }
 
-.form-header > p {
+.form-header-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.form-header-text > button {
+  font: normal 400 16px/150% 'Lato', sans-serif;
+  padding: unset;
+  border: 0;
+  outline: 0;
+}
+
+.form-header-text > p {
   font: normal 400 16px/150% 'Lato', sans-serif;
   color: var(--color-font-active);
 }

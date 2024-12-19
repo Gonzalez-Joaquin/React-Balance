@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-
+import logo from './Assets/logo.png'
 interface Props {
   children?: React.ReactNode
 }
@@ -10,7 +10,7 @@ const Header = ({ children }: Props) => {
       <div className={styles['header-content']}>
         <div className={styles['logo-container']}>
           <div className={styles.logo}>
-            <img src={'./logo.png'} alt='logo-web-app' />
+            <img src={logo} alt='logo-web-app' />
           </div>
           <h1 className={styles.title}>WebChat</h1>
         </div>

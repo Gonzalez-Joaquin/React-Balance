@@ -1,20 +1,27 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import { CharacterDTO, UserWithCharacter } from '../../../../@types'
+import { CharacterDTO, UserDTO, UserWithCharacter } from '../../../../@types'
+import { Loader } from '../../../../Components'
 import { UserCard } from './Components'
 import style from './Home.module.css'
-import usersList from './Data'
-import { Loader } from '../../../../Components'
+import API from '../../../../Api'
 
 const Home = () => {
-  const [loading, setLoading] = useState<boolean>(true)
+  const user: UserDTO = JSON.parse(sessionStorage.getItem('user') as string)
   const [users, setUsers] = useState<Array<UserWithCharacter>>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   const fetchCharacters = async () => {
-    const allIds = usersList.map((user) => user.characterID)
-
     try {
+      const { data: usersList }: { data: Array<UserDTO> } = await API.get(
+        '/users'
+      )
+
+      const allIds = usersList
+        .map((user) => Number(user.characterID))
+        .filter(Boolean)
+
       const response = await axios.get<Array<CharacterDTO>>(
         `https://rickandmortyapi.com/api/character/${allIds.join(',')}`
       )
@@ -53,9 +60,10 @@ const Home = () => {
         <article className={style.article}>
           <h2 className={style.title}>Listado de usuarios</h2>
           <div className={style['user-list']}>
-            {users.map((user) => (
-              <UserCard user={user} key={user.id} />
-            ))}
+            {users.map(
+              (item) =>
+                item.id !== user.id && <UserCard user={item} key={item.id} />
+            )}
           </div>
         </article>
       )}

@@ -1,7 +1,12 @@
+import { ToastProvider } from './Components'
 import { Navigation } from './Routes'
 
 const App = () => {
-  return <Navigation />
+  return (
+    <ToastProvider>
+      <Navigation />
+    </ToastProvider>
+  )
 }
 
 export default App
